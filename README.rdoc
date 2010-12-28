@@ -2,16 +2,26 @@
 
 Inserts correct authenticity token to html forms, when page is cached.
 
+Rails 2.3.x tested only. But should work for Rails 3.
 
 == Example
 
-<%
+Insert into layout:
+
+  <%= javascript_include_tag 'jquery', 'jquery.cookie', 'js_authenticity_token' %>
 
   $(function(){
-    auth_token(function(){ // load token callback
-      $("form#form_1").auth_token(); // update tokens
-    });
+    $("form#form_1").auth_token(); // update tokens
   });
+
+== Installation
+
+  ruby script/install plugin git://github.com/sergio-fry/js_authenticity_token.git
+
+== Required
+
+* jQuery
+* jquery.cookie
 
 
 Copyright (c) 2010 Sergei O. Udalov, released under the MIT license
