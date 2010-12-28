@@ -1,0 +1,17 @@
+== JsAuthenticityToken
+
+Inserts correct authenticity token to html forms, when page is cached.
+
+
+== Example
+
+<%
+
+  $(function(){
+    auth_token(function(){ // load token callback
+      $("form#form_1").auth_token(); // update tokens
+    });
+  });
+
+
+Copyright (c) 2010 Sergei O. Udalov, released under the MIT license
